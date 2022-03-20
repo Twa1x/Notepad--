@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -22,6 +23,8 @@ namespace NotepadV2__.ViewModels
 
         public FindModel Word { get; set; }
         public DocumentModel Document { get; set; }
+        public FindDialog FindDialog { get; private set; }
+
         public FindViewModel(DocumentModel document)
         {
             Document = document;
@@ -32,18 +35,28 @@ namespace NotepadV2__.ViewModels
 
         private void Find()
         {
+            
             string word = string.Empty;
             InputDialog inputDialog = new InputDialog("Please enter the word you are looking for: ");
             if (inputDialog.ShowDialog() == true)
             {
                 word = inputDialog.Answer;
-
+                TextBox textBox = new TextBox();
+                textBox.Text = Document.Text;
                 if (Document.Text != null)
                 {
-                    if (Document.Text.Contains(word))
+                    if (textBox.Text.Contains(word))
                     {
                         Console.WriteLine("Da");
+                        var regex = new Regex(word, RegexOptions.IgnoreCase);
+                        foreach (Match m in regex.Matches(textBox.Text))
+                        {
+                            textBox.Text = textBox.Text.Replace(m.ToString(), m.ToString().ToUpper());
+                            
+                        }
 
+                        FindDialog = new FindDialog(textBox);
+                        FindDialog.Show();
                     }
                     else
                     {

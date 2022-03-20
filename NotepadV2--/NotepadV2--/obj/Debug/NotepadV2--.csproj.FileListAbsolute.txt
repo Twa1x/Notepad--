@@ -40,3 +40,5 @@ C:\Users\INTEL\Documents\GitHub\Notepad--\NotepadV2--\NotepadV2--\obj\Debug\Inpu
 C:\Users\INTEL\Documents\GitHub\Notepad--\NotepadV2--\NotepadV2--\obj\Debug\InputDialogReplace.g.cs
 C:\Users\INTEL\Documents\GitHub\Notepad--\NotepadV2--\NotepadV2--\obj\Debug\HelpDialog.g.cs
 C:\Users\INTEL\Documents\GitHub\Notepad--\NotepadV2--\NotepadV2--\obj\Debug\HelpDialog.baml
+C:\Users\INTEL\Documents\GitHub\Notepad--\NotepadV2--\NotepadV2--\obj\Debug\FindDialog.g.cs
+C:\Users\INTEL\Documents\GitHub\Notepad--\NotepadV2--\NotepadV2--\obj\Debug\FindDialog.baml

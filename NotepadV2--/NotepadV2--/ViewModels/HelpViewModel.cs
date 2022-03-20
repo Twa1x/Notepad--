@@ -9,9 +9,11 @@ using System.Windows.Input;
 
 namespace NotepadV2__.ViewModels
 {
-    public class HelpViewModel : ObservableObject
+    public class HelpViewModel
     {
         public ICommand HelpCommand { get; }
+
+
 
         public HelpViewModel()
         {
@@ -20,9 +22,8 @@ namespace NotepadV2__.ViewModels
 
         private void DispalyAbout()
         {
-
-            HelpDialog helps = new HelpDialog();
-           
+            HelpDialog helpDialog = new HelpDialog();
+            helpDialog.Show();
         }
 
     }
