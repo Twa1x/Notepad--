@@ -1,0 +1,32 @@
+﻿<Window x:Class="NotepadV2__.HelpDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:NotepadV2__"
+        mc:Ignorable="d"
+        Title="HelpDialog" Height="150" Width="200">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="15" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="*" />
+           
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="1" Grid.Column="1"> Nume: Calcioiu Alexandru</TextBlock>
+        <TextBlock Grid.Row="2" Grid.Column="1"> Grupa: 301</TextBlock>
+        <TextBlock Grid.Row="3" Grid.Column="1"> Email:  
+             <Hyperlink 
+        NavigateUri="https://student.unitbv.ro/"
+        RequestNavigate="Hyperlink_RequestNavigate">
+        Unitbv Email
+    </Hyperlink>
+        </TextBlock>
+        
+    </Grid>
+</Window>

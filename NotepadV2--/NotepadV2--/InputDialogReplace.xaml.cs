@@ -17,17 +17,17 @@ namespace NotepadV2__
     /// <summary>
     /// Interaction logic for InputDialog.xaml
     /// </summary>
-    public partial class InputDialog : Window
+    public partial class InputDialogReplace : Window
     {
-        public InputDialog(string question, string defaultAnswer = "")
+    
+        public InputDialogReplace(string question, string defaultAnswer = "", string defaultAnswer2 = "")
         {
             InitializeComponent();
             lblQuestion.Content = question;
             txtAnswer.Text = defaultAnswer;
-            
+            txtAnswer2.Text = defaultAnswer2;
 
         }
-               
         private void btnDialogOk_Click(object sender, RoutedEventArgs e)
         {
             this.DialogResult = true;
@@ -44,6 +44,9 @@ namespace NotepadV2__
             get { return txtAnswer.Text; }
         }
 
-     
+        public string Answer2
+        {
+            get { return txtAnswer2.Text; }
+        }
     }
 }

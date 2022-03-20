@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\INTEL\Documents\GitHub\Notepad--\NotepadV2--\NotepadV2--\App.xaml
-3-1201706897
+51709144635
 
-191517484713
+20-101192772
 13-1505183044
-FontDialog.xaml;InputDialog.xaml;MainWindow.xaml;
+FontDialog.xaml;HelpDialog.xaml;InputDialog.xaml;InputDialogReplace.xaml;MainWindow.xaml;
 
-False
+True
 

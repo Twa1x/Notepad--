@@ -35,27 +35,39 @@ namespace NotepadV2__.ViewModels
             string word = string.Empty;
             InputDialog inputDialog = new InputDialog("Please enter the word you are looking for: ");
             if (inputDialog.ShowDialog() == true)
+            {
                 word = inputDialog.Answer;
 
+                if (Document.Text != null)
+                {
+                    if (Document.Text.Contains(word))
+                    {
+                        Console.WriteLine("Da");
 
-            if (Document.Text.Contains(word))
-            {
-                Console.WriteLine("Da");
-               
+                    }
+                    else
+                    {
+                        Console.WriteLine("Nu");
+                    }
+                }
             }
-            else
-            {
-                Console.WriteLine("Nu");
-            }
+
         }
 
         private void ReplaceAll()
         {
-            string word = string.Empty;
-            InputDialog inputDialog = new InputDialog("Please enter the word you want to replace: ");
+            string wordToReplace = string.Empty;
+            InputDialogReplace inputDialog = new InputDialogReplace("Please enter the word you want to replace: ", "", "");
             if (inputDialog.ShowDialog() == true)
-                word = inputDialog.Answer;
-            Document.Text.Replace(word, "alex");
+            {
+                wordToReplace = inputDialog.Answer;
+                string wordToBeReplacedWith = inputDialog.Answer2;
+                if (Document.Text != null)
+                {
+                    Document.Text = Document.Text.Replace(wordToReplace, wordToBeReplacedWith);
+                    Document.TextChanged = true;
+                }
+            }
         }
 
     }

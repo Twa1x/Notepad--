@@ -20,7 +20,8 @@ namespace NotepadV2__.ViewModels
 
         private void DispalyAbout()
         {
-            CustomMessageBox message = new CustomMessageBox();
+
+            HelpDialog helps = new HelpDialog();
            
         }
 
