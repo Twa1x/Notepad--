@@ -9,7 +9,7 @@ namespace NotepadV2__.ViewModels
 {
     public class MainViewModel
     {
-        private List<DocumentModel> _documents;
+        //private List<DocumentModel> _documents;
         private DocumentModel _document;
 
         public EditorViewModel Editor { get; set; }
@@ -17,12 +17,16 @@ namespace NotepadV2__.ViewModels
         public FileViewModel File { get; set; }
         public HelpViewModel Help { get; set; }
 
+        public FindViewModel Find { get; set; }
+
         public MainViewModel()
         {
             _document = new DocumentModel();
             Help = new HelpViewModel();
             Editor = new EditorViewModel(_document);
-            File = new FileViewModel(_document);  
+            File = new FileViewModel(_document);
+            Find = new FindViewModel(_document);
+
         }
 
 

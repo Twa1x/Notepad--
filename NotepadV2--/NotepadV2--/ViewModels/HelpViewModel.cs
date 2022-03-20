@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Input;
 
 namespace NotepadV2__.ViewModels
@@ -20,6 +21,7 @@ namespace NotepadV2__.ViewModels
         private void DispalyAbout()
         {
             CustomMessageBox message = new CustomMessageBox();
+           
         }
 
     }

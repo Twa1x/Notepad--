@@ -24,5 +24,11 @@ namespace NotepadV2__
         {
             InitializeComponent();
         }
+
+        //private void MenuItemFind_Click(object sender, RoutedEventArgs e)
+        //{
+        //    InputDialog inputDialog = new InputDialog("Please enter the word you are looking for: ");
+        //    Console.WriteLine(inputDialog.txtAnswer);
+        //}
     }
 }

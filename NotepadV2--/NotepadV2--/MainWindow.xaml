@@ -27,6 +27,9 @@
                 <MenuItem Header="Help">
                     <MenuItem Header="About" Command="{Binding Help.HelpCommand}"/>
                 </MenuItem>
+                <MenuItem Header="Find">
+                    <MenuItem Header="Find" Command="{Binding Find.FindCommand}" />
+                </MenuItem>
 
             </Menu.Items>
         </Menu>
