@@ -37,7 +37,7 @@ namespace NotepadV2__.ViewModels
 
         private void Find()
         {
-            
+
             string word = string.Empty;
             InputDialog inputDialog = new InputDialog("Please enter the word you are looking for: ");
             if (inputDialog.ShowDialog() == true)
@@ -63,7 +63,7 @@ namespace NotepadV2__.ViewModels
                     }
                     else
                     {
-                        // to be implemented.
+                        NotFound();
                     }
                 }
             }
@@ -85,30 +85,58 @@ namespace NotepadV2__.ViewModels
                     Document.TextChanged = true;
                 }
                 else
-                { 
-                    // to be implemented
+                {
+                    NotFound();
                 }
             }
         }
-        
+
         private void Replace()
         {
             string wordToReplace = string.Empty;
-            InputDialogReplace inputDialog = new InputDialogReplace("Please enter the word you want to replace: ", "Enter the index of the word you want to replace:", "", "");
+            InputDialogReplaceIndex inputDialog = new InputDialogReplaceIndex("Please enter the word you want to replace: ", "Enter the word you want to replace with: ", "Enter the index of the word you want to replace:", "", "", "");
             if (inputDialog.ShowDialog() == true)
             {
                 wordToReplace = inputDialog.Answer;
                 string wordToBeReplacedWith = inputDialog.Answer2;
+                int index;
+                checked
+                {
+                     index = Int32.Parse(inputDialog.Answer3);
+                }
+                
+                
                 if (Document.Text != null && Document.Text.Contains(wordToReplace))
                 {
-                    Document.Text = Document.Text.Replace(wordToReplace, wordToBeReplacedWith);
+                    int tempIndex = 0;
+                    string tempString = Document.Text;
+                    string[] tempStrings = tempString.Split(' ');
+                    for (int i = 0; i < tempStrings.Length; i++)
+                    {
+                        if (tempStrings[i] == wordToReplace)
+                        {
+                            tempIndex++;
+                            if (tempIndex == index)
+                            {
+                                tempStrings[i] = wordToBeReplacedWith;
+                                break;
+                            }
+                        }
+                    }
+                    //tempString = String.Join(" ", tempStrings);
+                    Document.Text= String.Join(" ", tempStrings);
                     Document.TextChanged = true;
                 }
                 else
                 {
-                    // to be implemented
+                    NotFound();
                 }
             }
+        }
+
+        private void NotFound()
+        {
+            MessageBox.Show(string.Format("The word dosen't exist!"), "Not Found", MessageBoxButton.OK);
         }
     }
 }

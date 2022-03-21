@@ -30,6 +30,7 @@
                 <MenuItem Header="Find">
                     <MenuItem Header="Find" Command="{Binding Find.FindCommand}" />
                     <MenuItem Header="Replace All" Command="{Binding Find.ReplaceAllCommand}" />
+                    <MenuItem Header="Replace " Command="{Binding Find.ReplaceCommand}" />
                 </MenuItem>
 
             </Menu.Items>

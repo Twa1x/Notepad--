@@ -68,3 +68,5 @@ C:\Users\Alex\Documents\GitHub\Notepad--\NotepadV2--\NotepadV2--\obj\Debug\Notep
 C:\Users\Alex\Documents\GitHub\Notepad--\NotepadV2--\NotepadV2--\obj\Debug\NotepadV2--.csproj.CoreCompileInputs.cache
 C:\Users\Alex\Documents\GitHub\Notepad--\NotepadV2--\NotepadV2--\obj\Debug\NotepadV2--.exe
 C:\Users\Alex\Documents\GitHub\Notepad--\NotepadV2--\NotepadV2--\obj\Debug\NotepadV2--.pdb
+C:\Users\INTEL\Documents\GitHub\Notepad--\NotepadV2--\NotepadV2--\obj\Debug\InputDialogReplaceIndex.baml
+C:\Users\INTEL\Documents\GitHub\Notepad--\NotepadV2--\NotepadV2--\obj\Debug\InputDialogReplaceIndex.g.cs
