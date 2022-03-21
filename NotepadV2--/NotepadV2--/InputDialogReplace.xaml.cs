@@ -20,10 +20,11 @@ namespace NotepadV2__
     public partial class InputDialogReplace : Window
     {
     
-        public InputDialogReplace(string question, string defaultAnswer = "", string defaultAnswer2 = "")
+        public InputDialogReplace(string question,string question2, string defaultAnswer = "", string defaultAnswer2 = "")
         {
             InitializeComponent();
             lblQuestion.Content = question;
+            lblQuestion2.Content = question2;
             txtAnswer.Text = defaultAnswer;
             txtAnswer2.Text = defaultAnswer2;
 

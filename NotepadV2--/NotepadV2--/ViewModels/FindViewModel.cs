@@ -20,6 +20,7 @@ namespace NotepadV2__.ViewModels
         public ICommand FindCommand { get; }
 
         public ICommand ReplaceAllCommand { get; }
+        public ICommand ReplaceCommand { get; }
 
         public FindModel Word { get; set; }
         public DocumentModel Document { get; set; }
@@ -30,6 +31,7 @@ namespace NotepadV2__.ViewModels
             Document = document;
             FindCommand = new RelayCommand(Find);
             ReplaceAllCommand = new RelayCommand(ReplaceAll);
+            ReplaceCommand = new RelayCommand(Replace);
         }
 
 
@@ -48,11 +50,12 @@ namespace NotepadV2__.ViewModels
                     if (textBox.Text.Contains(word))
                     {
                         Console.WriteLine("Da");
+
                         var regex = new Regex(word, RegexOptions.IgnoreCase);
                         foreach (Match m in regex.Matches(textBox.Text))
                         {
-                            textBox.Text = textBox.Text.Replace(m.ToString(), m.ToString().ToUpper());
-                            
+                            textBox.Text = textBox.Text.Replace(m.ToString(), "~" + m.ToString().ToUpper() + "~");
+
                         }
 
                         FindDialog = new FindDialog(textBox);
@@ -60,7 +63,7 @@ namespace NotepadV2__.ViewModels
                     }
                     else
                     {
-                        Console.WriteLine("Nu");
+                        // to be implemented.
                     }
                 }
             }
@@ -70,18 +73,42 @@ namespace NotepadV2__.ViewModels
         private void ReplaceAll()
         {
             string wordToReplace = string.Empty;
-            InputDialogReplace inputDialog = new InputDialogReplace("Please enter the word you want to replace: ", "", "");
+            InputDialogReplace inputDialog = new InputDialogReplace("Please enter the word you want to replace: ", "Enter the word you want to replace with:", "", "");
             if (inputDialog.ShowDialog() == true)
             {
                 wordToReplace = inputDialog.Answer;
                 string wordToBeReplacedWith = inputDialog.Answer2;
-                if (Document.Text != null)
+
+                if (Document.Text != null && Document.Text.Contains(wordToReplace))
                 {
                     Document.Text = Document.Text.Replace(wordToReplace, wordToBeReplacedWith);
                     Document.TextChanged = true;
                 }
+                else
+                { 
+                    // to be implemented
+                }
             }
         }
-
+        
+        private void Replace()
+        {
+            string wordToReplace = string.Empty;
+            InputDialogReplace inputDialog = new InputDialogReplace("Please enter the word you want to replace: ", "Enter the index of the word you want to replace:", "", "");
+            if (inputDialog.ShowDialog() == true)
+            {
+                wordToReplace = inputDialog.Answer;
+                string wordToBeReplacedWith = inputDialog.Answer2;
+                if (Document.Text != null && Document.Text.Contains(wordToReplace))
+                {
+                    Document.Text = Document.Text.Replace(wordToReplace, wordToBeReplacedWith);
+                    Document.TextChanged = true;
+                }
+                else
+                {
+                    // to be implemented
+                }
+            }
+        }
     }
 }

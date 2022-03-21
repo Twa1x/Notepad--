@@ -79,7 +79,8 @@ namespace NotepadV2__.ViewModels
         {
             if (MessageBox.Show(string.Format("Are you sure you want to exit Notepad--?"), "Close Application", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
             {
-                SaveFile();
+                if (MessageBox.Show(string.Format("Do you want to save the file?"), "Save Close", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
+                     SaveFile();
                 System.Windows.Application.Current.Shutdown();
             }
 

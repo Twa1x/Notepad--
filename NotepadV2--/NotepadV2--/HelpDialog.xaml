@@ -5,14 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:NotepadV2__"
         mc:Ignorable="d"
-        Title="HelpDialog" Height="150" Width="200">
+        Title="HelpDialog" Height="250" Width="200">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="15" />
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="20" />
+            <RowDefinition Height="50" />
             <RowDefinition Height="auto" />
             <RowDefinition Height="auto" />
             <RowDefinition Height="*" />

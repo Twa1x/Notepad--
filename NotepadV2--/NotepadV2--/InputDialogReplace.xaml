@@ -19,7 +19,7 @@
 
         <Label Name="lblQuestion" Grid.Column="1" Grid.Row="0" Margin="0,5">Question:</Label>
         <TextBox Name="txtAnswer" Grid.Column="1" Grid.Row="1" MinWidth="250">Answer</TextBox>
-        <Label Name="lblQuestion2" Grid.Column="1" Grid.Row="2" Margin="0,5">Enter the word you want to replace with:</Label>
+        <Label Name="lblQuestion2" Grid.Column="1" Grid.Row="2" Margin="0,5">Question</Label>
         <TextBox Name="txtAnswer2" Grid.Column="1" Grid.Row="3" MinWidth="250" Margin="0,0,0,20">Answer</TextBox>
 
         <WrapPanel Grid.Row="4" Grid.ColumnSpan="2" HorizontalAlignment="Right" Margin="0,15,0,0" Width="201">
