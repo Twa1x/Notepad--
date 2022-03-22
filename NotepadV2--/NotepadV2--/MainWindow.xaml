@@ -55,18 +55,6 @@
                     </MenuItem>
                 </MenuItem>
 
-                <MenuItem Header="Format" Foreground="LightGreen" FontSize="16" >
-                    <MenuItem Header="Format" Command="{Binding Editor.FormatCommand}" IsChecked="{Binding Path=File.Document.TextChanged, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"  Foreground="ForestGreen" FontSize="14" FontWeight="SemiBold"/>
-                    <MenuItem Header="Word wrap" Command="{Binding Editor.WrapCommand}" IsCheckable="True" Foreground="ForestGreen" FontSize="14" FontWeight="SemiBold"/>
-                </MenuItem>
-
-                <MenuItem Header="Help">
-                    <MenuItem Header="About" Command="{Binding Help.HelpCommand}" Foreground="DarkBlue" FontSize="14" FontWeight="SemiBold" >
-                        <MenuItem.Icon>
-                            <Image Source="./Res/about.png" />
-                        </MenuItem.Icon>
-                    </MenuItem>
-                </MenuItem>
                 <MenuItem Header="Find"  Foreground="LightGreen" FontSize="16">
                     <MenuItem Header="Find" Command="{Binding Find.FindCommand}" Foreground="ForestGreen" FontSize="14" FontWeight="SemiBold" >
                         <MenuItem.Icon>
@@ -85,6 +73,15 @@
                     </MenuItem>
                 </MenuItem>
 
+                <MenuItem Header="Help">
+                    <MenuItem Header="About" Command="{Binding Help.HelpCommand}" Foreground="DarkBlue" FontSize="14" FontWeight="SemiBold" >
+                        <MenuItem.Icon>
+                            <Image Source="./Res/about.png" />
+                        </MenuItem.Icon>
+                    </MenuItem>
+                </MenuItem>
+
+
             </Menu.Items>
         </Menu>
         <DockPanel>
@@ -97,12 +94,8 @@
 
             <TextBox DockPanel.Dock="Top"
                      VerticalScrollBarVisibility="Visible"
-                     DataContext="{Binding Editor}"
-                     FontFamily="{Binding Format.Family}"
-                     FontSize="{Binding Format.Size}"
-                     FontStyle="{Binding Format.Style}"
-                     FontWeight="{Binding Format.Weight}"
-                     TextWrapping="{Binding Format.Wrap}"
+                     DataContext="{Binding File}"
+                     TextWrapping="Wrap"
                      AcceptsReturn="True"
                      AcceptsTab="True"
                      Name ="textBox"
