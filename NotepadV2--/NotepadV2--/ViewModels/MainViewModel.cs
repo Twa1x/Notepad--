@@ -23,7 +23,6 @@ namespace NotepadV2__.ViewModels
         {
             _document = new DocumentModel();
             Help = new HelpViewModel();
-
             File = new FileViewModel(_document);
             Find = new FindViewModel(_document);
 

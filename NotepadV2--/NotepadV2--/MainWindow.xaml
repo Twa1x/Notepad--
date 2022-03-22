@@ -72,9 +72,9 @@
                         </MenuItem.Icon>
                     </MenuItem>
                 </MenuItem>
-
+                <!--IsChecked ="{Binding Path=File.Document.TextChanged, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}-->
                 <MenuItem Header="Help">
-                    <MenuItem Header="About" Command="{Binding Help.HelpCommand}" Foreground="DarkBlue" FontSize="14" FontWeight="SemiBold" >
+                    <MenuItem Header="About"  Command="{Binding Help.HelpCommand}"  Foreground="DarkBlue" FontSize="14" FontWeight="SemiBold" >
                         <MenuItem.Icon>
                             <Image Source="./Res/about.png" />
                         </MenuItem.Icon>
@@ -84,12 +84,14 @@
 
             </Menu.Items>
         </Menu>
+
         <DockPanel>
             <TextBlock DockPanel.Dock="Bottom"
-                       DataContext="{Binding File.Document}"
-                       Text="{Binding FilePath}"
+                       DataContext="{Binding File}"
+                       Text="{Binding File.Document.FilePath}"
                        Name ="textBlockPath"
-                       Background="Blue"
+                     Background="{Binding Document.IsTextChanged.Background, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" 
+                    
                        />
 
             <TextBox DockPanel.Dock="Top"
@@ -100,6 +102,7 @@
                      AcceptsTab="True"
                      Name ="textBox"
                      TextChanged="textBox_TextChanged"
+                  
                      Text="{Binding Document.Text, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
 
         </DockPanel>

@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
+using System.Windows.Media;
 
 namespace NotepadV2__.Models
 {
@@ -13,18 +15,25 @@ namespace NotepadV2__.Models
         private string _fileName;
         private bool _isSaved;
         private bool _textChanged;
+        private TextBlock _isTextChanged = new TextBlock();
       
 
         public bool TextChanged
         {
             get { return _textChanged; }
-            set { OnPropertyChanged(ref _textChanged, value);  } // trimitem ref de la _text 
+            set { OnPropertyChanged(ref _textChanged, value); } // trimitem ref de la _text 
+
+        }
+        public TextBlock IsTextChanged
+        {
+            get { return _isTextChanged; }
+            set { OnPropertyChanged(ref _isTextChanged, value); } // trimitem ref de la _text 
 
         }
         public string Text
         {
-            get { return _text; _textChanged = false; }
-            set { OnPropertyChanged(ref _text, value); _textChanged = false; } // trimitem ref de la _text 
+            get { return _text; _textChanged = false; _isTextChanged.Background = Brushes.Red; }
+            set { OnPropertyChanged(ref _text, value); _textChanged = false; _isTextChanged.Background = Brushes.Red; } // trimitem ref de la _text 
 
         }
 

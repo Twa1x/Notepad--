@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
+using System.Windows.Media;
 
 namespace NotepadV2__.ViewModels
 {
@@ -50,6 +51,8 @@ namespace NotepadV2__.ViewModels
             else
                 SaveFileAs();
                 Document.TextChanged = true;
+            Document.IsTextChanged.Background = Brushes.Blue;
+           
         }
             
         private void SaveFileAs()
@@ -63,6 +66,8 @@ namespace NotepadV2__.ViewModels
                 Document.IsSaved = true;
                 File.WriteAllText(saveFileDialog.FileName, Document.Text);
                 Document.TextChanged = true;
+                Document.IsTextChanged.Background = Brushes.Blue;
+             
             }
           
         }
@@ -79,8 +84,10 @@ namespace NotepadV2__.ViewModels
                 Document.FileName = openFileDialog.SafeFileName;
                 Document.IsSaved = true;
                 Document.TextChanged = true;
+                Document.IsTextChanged.Background = Brushes.Blue;
                 Document.Text = File.ReadAllText(openFileDialog.FileName);
-       
+
+
             }
         
         }
