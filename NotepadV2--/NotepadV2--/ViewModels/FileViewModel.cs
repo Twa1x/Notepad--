@@ -37,6 +37,8 @@ namespace NotepadV2__.ViewModels
             Document.FileName = string.Empty;
             Document.FilePath = string.Empty;
             Document.Text = string.Empty;
+            Document.TextChanged = false;
+            Document.IsSaved = false;
         }
 
         private void SaveFile()
@@ -44,10 +46,10 @@ namespace NotepadV2__.ViewModels
             if (Document.IsSaved == true)
             {
                 File.WriteAllText(Document.FilePath, Document.Text);
-                Document.TextChanged = false;
             }
             else
                 SaveFileAs();
+                Document.TextChanged = true;
         }
             
         private void SaveFileAs()
@@ -60,7 +62,7 @@ namespace NotepadV2__.ViewModels
                 Document.FileName = saveFileDialog.SafeFileName;
                 Document.IsSaved = true;
                 File.WriteAllText(saveFileDialog.FileName, Document.Text);
-                Document.TextChanged = false;
+                Document.TextChanged = true;
             }
           
         }

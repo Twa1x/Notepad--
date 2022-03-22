@@ -23,8 +23,8 @@ namespace NotepadV2__.Models
         }
         public string Text
         {
-            get { return _text; }
-            set { OnPropertyChanged(ref _text, value);} // trimitem ref de la _text 
+            get { return _text; _textChanged = false; }
+            set { OnPropertyChanged(ref _text, value); _textChanged = false; } // trimitem ref de la _text 
 
         }
 

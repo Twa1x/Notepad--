@@ -56,7 +56,7 @@
                 </MenuItem>
 
                 <MenuItem Header="Format" Foreground="LightGreen" FontSize="16" >
-                    <MenuItem Header="Format" Command="{Binding Editor.FormatCommand}"  Foreground="ForestGreen" FontSize="14" FontWeight="SemiBold"/>
+                    <MenuItem Header="Format" Command="{Binding Editor.FormatCommand}" IsChecked="{Binding Path=File.Document.TextChanged, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"  Foreground="ForestGreen" FontSize="14" FontWeight="SemiBold"/>
                     <MenuItem Header="Word wrap" Command="{Binding Editor.WrapCommand}" IsCheckable="True" Foreground="ForestGreen" FontSize="14" FontWeight="SemiBold"/>
                 </MenuItem>
 
