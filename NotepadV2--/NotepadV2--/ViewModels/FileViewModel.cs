@@ -56,7 +56,9 @@ namespace NotepadV2__.ViewModels
             saveFileDialog.Filter = "Text File (*.txt)|*.txt";
             if (saveFileDialog.ShowDialog() == true)
             {
-                DockFile(saveFileDialog);
+                Document.FilePath = saveFileDialog.FileName;
+                Document.FileName = saveFileDialog.SafeFileName;
+                Document.IsSaved = true;
                 File.WriteAllText(saveFileDialog.FileName, Document.Text);
                 Document.TextChanged = false;
             }
@@ -70,9 +72,14 @@ namespace NotepadV2__.ViewModels
             openFileDialog.Filter = "All files (*.*)|*.*";
             if (openFileDialog.ShowDialog() == true)
             {
-                DockFile(openFileDialog);
+                Document.FilePath = openFileDialog.FileName;
+                Document.FileName = openFileDialog.SafeFileName;
+                Document.IsSaved = true;
+                Document.TextChanged = true;
                 Document.Text = File.ReadAllText(openFileDialog.FileName);
+       
             }
+        
         }
 
         private void ExitFile()
@@ -85,12 +92,7 @@ namespace NotepadV2__.ViewModels
             }
 
         }
-        private void DockFile<T>(T dialog) where T : FileDialog
-        {
-            Document.FilePath = dialog.FileName;
-            Document.FileName = dialog.SafeFileName;
-            Document.IsSaved = true;
-        }
+      
 
 
     }

@@ -173,5 +173,16 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Res\about.png" />
+    <Resource Include="Res\exit.png" />
+    <Resource Include="Res\find.jpg" />
+    <Resource Include="Res\logo.png" />
+    <Resource Include="Res\new.png" />
+    <Resource Include="Res\open.png" />
+    <Resource Include="Res\replace.png" />
+    <Resource Include="Res\save.png" />
+    <Resource Include="Res\saveAs.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

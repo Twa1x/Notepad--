@@ -11,26 +11,78 @@
         <viewmodels:MainViewModel/>
     </Window.DataContext>
     <DockPanel Margin="1">
-        <Menu DockPanel.Dock="Top">
+        <Menu DockPanel.Dock="Top" Height="38"  VerticalAlignment="Top" BorderThickness="2" Foreground="White" FontSize="16" FontWeight="Bold">
+
+            <Menu.Background>
+                <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                    <GradientStop Color="#FF3A60AD" Offset="0.528" />
+                    <GradientStop Color="#FF6A85D8" Offset="0.01" />
+                    <GradientStop Color="#FF3464C4" Offset="1" />
+                    <GradientStop Color="#FF202E7E" Offset="1" />
+                </LinearGradientBrush>
+            </Menu.Background>
+            <Menu.BitmapEffect>
+                <DropShadowBitmapEffect />
+            </Menu.BitmapEffect>
+
             <Menu.Items>
-                <MenuItem Header="File">
-                    <MenuItem Header="New" Command="{Binding File.NewCommand}"/>
-                    <MenuItem Header="Open" Command="{Binding File.OpenCommand}"/>
-                    <MenuItem Header="Save" Command="{Binding File.SaveCommand}"/>
-                    <MenuItem Header="Save As" Command="{Binding File.SaveAsCommand}"/>
-                    <MenuItem Header="Exit" Command="{Binding File.ExitCommand}"/>
+                <MenuItem Header="File" >
+
+                    <MenuItem Header="New" Command="{Binding File.NewCommand}"  Foreground="DarkBlue" FontSize="14" FontWeight="SemiBold" >
+                        <MenuItem.Icon>
+                            <Image Source="./Res/new.png" />
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Header="Open" Command="{Binding File.OpenCommand}" Foreground="DarkBlue" FontSize="14" FontWeight="SemiBold" >
+                        <MenuItem.Icon>
+                            <Image Source="./Res/open.png" />
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Header="Save" Command="{Binding File.SaveCommand}" Foreground="DarkBlue" FontSize="14" FontWeight="SemiBold" >
+                        <MenuItem.Icon>
+                            <Image Source="./Res/save.png" />
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Header="Save As" Command="{Binding File.SaveAsCommand}" Foreground="DarkBlue" FontSize="14" FontWeight="SemiBold" >
+                        <MenuItem.Icon>
+                            <Image Source="./Res/saveAs.png" />
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Header="Exit" Command="{Binding File.ExitCommand}" Foreground="DarkBlue" FontSize="14" FontWeight="SemiBold" >
+                        <MenuItem.Icon>
+                            <Image Source="./Res/exit.png" />
+                        </MenuItem.Icon>
+                    </MenuItem>
                 </MenuItem>
-                <MenuItem Header="Format">
-                    <MenuItem Header="Format" Command="{Binding Editor.FormatCommand}"/>
-                    <MenuItem Header="Word wrap" Command="{Binding Editor.WrapCommand}"/>
+
+                <MenuItem Header="Format" Foreground="LightGreen" FontSize="16">
+                    <MenuItem Header="Format" Command="{Binding Editor.FormatCommand}" Foreground="ForestGreen" FontSize="14" FontWeight="SemiBold"/>
+                    <MenuItem Header="Word wrap" Command="{Binding Editor.WrapCommand}" IsCheckable="True" Foreground="ForestGreen" FontSize="14" FontWeight="SemiBold"/>
                 </MenuItem>
+
                 <MenuItem Header="Help">
-                    <MenuItem Header="About" Command="{Binding Help.HelpCommand}"/>
+                    <MenuItem Header="About" Command="{Binding Help.HelpCommand}" Foreground="DarkBlue" FontSize="14" FontWeight="SemiBold" >
+                        <MenuItem.Icon>
+                            <Image Source="./Res/about.png" />
+                        </MenuItem.Icon>
+                    </MenuItem>
                 </MenuItem>
-                <MenuItem Header="Find">
-                    <MenuItem Header="Find" Command="{Binding Find.FindCommand}" />
-                    <MenuItem Header="Replace All" Command="{Binding Find.ReplaceAllCommand}" />
-                    <MenuItem Header="Replace " Command="{Binding Find.ReplaceCommand}" />
+                <MenuItem Header="Find"  Foreground="LightGreen" FontSize="16">
+                    <MenuItem Header="Find" Command="{Binding Find.FindCommand}" Foreground="ForestGreen" FontSize="14" FontWeight="SemiBold" >
+                        <MenuItem.Icon>
+                            <Image Source="./Res/find.jpg" />
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Header="Replace All" Command="{Binding Find.ReplaceAllCommand}"   Foreground="ForestGreen" FontSize="14" FontWeight="SemiBold">
+                        <MenuItem.Icon>
+                            <Image Source="./Res/replace.png" />
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Header="Replace " Command="{Binding Find.ReplaceCommand}"  Foreground="ForestGreen" FontSize="14" FontWeight="SemiBold">
+                        <MenuItem.Icon>
+                            <Image Source="./Res/replace.png" />
+                        </MenuItem.Icon>
+                    </MenuItem>
                 </MenuItem>
 
             </Menu.Items>
@@ -40,7 +92,7 @@
                        DataContext="{Binding File.Document}"
                        Text="{Binding FilePath}"
                        />
-            
+
             <TextBox DockPanel.Dock="Top"
                      VerticalScrollBarVisibility="Visible"
                      DataContext="{Binding Editor}"
@@ -52,7 +104,7 @@
                      AcceptsReturn="True"
                      AcceptsTab="True"
                      Text="{Binding Document.Text, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
-            
+
         </DockPanel>
     </DockPanel>
 </Window>

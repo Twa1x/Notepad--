@@ -16,7 +16,7 @@
             <RowDefinition Height="auto" />
             <RowDefinition Height="auto" />
             <RowDefinition Height="*" />
-           
+
         </Grid.RowDefinitions>
         <TextBlock Grid.Row="1" Grid.Column="1"> Nume: Calcioiu Alexandru</TextBlock>
         <TextBlock Grid.Row="2" Grid.Column="1"> Grupa: 301</TextBlock>
@@ -27,6 +27,7 @@
         Unitbv Email
     </Hyperlink>
         </TextBlock>
-        
+        <Image HorizontalAlignment="Left" Height="193" VerticalAlignment="Top" Width="256" Margin="-36,16,-28,-72" Grid.Row="3" Source="./Res/logo.png" RenderTransformOrigin="0.466,0.853" Grid.ColumnSpan="2"/>
+
     </Grid>
 </Window>
