@@ -13,13 +13,18 @@ namespace NotepadV2__.Models
         private string _fileName;
         private bool _isSaved;
         private bool _textChanged;
+      
 
         public bool TextChanged
-        {get;set;}
+        {
+            get { return _textChanged; }
+            set { OnPropertyChanged(ref _textChanged, value);  } // trimitem ref de la _text 
+
+        }
         public string Text
         {
             get { return _text; }
-            set { OnPropertyChanged(ref _text, value); TextChanged = true;  } // trimitem ref de la _text 
+            set { OnPropertyChanged(ref _text, value);} // trimitem ref de la _text 
 
         }
 

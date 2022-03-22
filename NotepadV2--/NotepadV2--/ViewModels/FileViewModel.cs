@@ -62,6 +62,7 @@ namespace NotepadV2__.ViewModels
                 File.WriteAllText(saveFileDialog.FileName, Document.Text);
                 Document.TextChanged = false;
             }
+          
         }
 
         private void OpenFile()

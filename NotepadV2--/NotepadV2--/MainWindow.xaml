@@ -55,8 +55,8 @@
                     </MenuItem>
                 </MenuItem>
 
-                <MenuItem Header="Format" Foreground="LightGreen" FontSize="16">
-                    <MenuItem Header="Format" Command="{Binding Editor.FormatCommand}" Foreground="ForestGreen" FontSize="14" FontWeight="SemiBold"/>
+                <MenuItem Header="Format" Foreground="LightGreen" FontSize="16" >
+                    <MenuItem Header="Format" Command="{Binding Editor.FormatCommand}"  Foreground="ForestGreen" FontSize="14" FontWeight="SemiBold"/>
                     <MenuItem Header="Word wrap" Command="{Binding Editor.WrapCommand}" IsCheckable="True" Foreground="ForestGreen" FontSize="14" FontWeight="SemiBold"/>
                 </MenuItem>
 
@@ -91,6 +91,8 @@
             <TextBlock DockPanel.Dock="Bottom"
                        DataContext="{Binding File.Document}"
                        Text="{Binding FilePath}"
+                       Name ="textBlockPath"
+                       Background="Blue"
                        />
 
             <TextBox DockPanel.Dock="Top"
@@ -103,6 +105,8 @@
                      TextWrapping="{Binding Format.Wrap}"
                      AcceptsReturn="True"
                      AcceptsTab="True"
+                     Name ="textBox"
+                     TextChanged="textBox_TextChanged"
                      Text="{Binding Document.Text, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
 
         </DockPanel>
