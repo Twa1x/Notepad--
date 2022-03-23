@@ -22,7 +22,7 @@ namespace NotepadV2__.ViewModels
         public ICommand ReplaceAllCommand { get; }
         public ICommand ReplaceCommand { get; }
 
-        public FindModel Word { get; set; }
+       
         public DocumentModel Document { get; set; }
         public FindDialog FindDialog { get; private set; }
 

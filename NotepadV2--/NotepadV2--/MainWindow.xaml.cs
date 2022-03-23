@@ -32,5 +32,11 @@ namespace NotepadV2__
             textBlockPath.Background = Brushes.DarkRed;
             
         }
+
+        private void MenuItemNewWindow_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.ShowDialog();
+        }
     }
 }

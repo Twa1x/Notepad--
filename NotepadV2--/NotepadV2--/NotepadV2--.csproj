@@ -85,7 +85,6 @@
     <Compile Include="InputDialogReplaceIndex.xaml.cs">
       <DependentUpon>InputDialogReplaceIndex.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Models\FindModel.cs" />
     <Compile Include="RelayCommand.cs" />
     <Compile Include="ViewModels\FileViewModel.cs" />
     <Compile Include="ViewModels\FindViewModel.cs" />

@@ -26,7 +26,7 @@
             </Menu.BitmapEffect>
 
             <Menu.Items>
-                <MenuItem Header="File" >
+                <MenuItem Header="File" Foreground="WhiteSmoke" FontSize="16" >
 
                     <MenuItem Header="New" Command="{Binding File.NewCommand}"  Foreground="DarkBlue" FontSize="14" FontWeight="SemiBold" >
                         <MenuItem.Icon>
@@ -55,25 +55,25 @@
                     </MenuItem>
                 </MenuItem>
 
-                <MenuItem Header="Find"  Foreground="LightGreen" FontSize="16">
-                    <MenuItem Header="Find" Command="{Binding Find.FindCommand}" Foreground="ForestGreen" FontSize="14" FontWeight="SemiBold" >
+                <MenuItem Header="Find"  Foreground="WhiteSmoke" FontSize="16">
+                    <MenuItem Header="Find" Command="{Binding Find.FindCommand}"  Foreground="DarkBlue" FontSize="14" FontWeight="SemiBold" >
                         <MenuItem.Icon>
                             <Image Source="./Res/find.jpg" />
                         </MenuItem.Icon>
                     </MenuItem>
-                    <MenuItem Header="Replace All" Command="{Binding Find.ReplaceAllCommand}"   Foreground="ForestGreen" FontSize="14" FontWeight="SemiBold">
+                    <MenuItem Header="Replace All" Command="{Binding Find.ReplaceAllCommand}"    Foreground="DarkBlue" FontSize="14" FontWeight="SemiBold">
                         <MenuItem.Icon>
                             <Image Source="./Res/replace.png" />
                         </MenuItem.Icon>
                     </MenuItem>
-                    <MenuItem Header="Replace " Command="{Binding Find.ReplaceCommand}"  Foreground="ForestGreen" FontSize="14" FontWeight="SemiBold">
+                    <MenuItem Header="Replace " Command="{Binding Find.ReplaceCommand}"   Foreground="DarkBlue" FontSize="14" FontWeight="SemiBold">
                         <MenuItem.Icon>
                             <Image Source="./Res/replace.png" />
                         </MenuItem.Icon>
                     </MenuItem>
                 </MenuItem>
-               
-                <MenuItem Header="Help">
+
+                <MenuItem Header="Help" Foreground="WhiteSmoke" FontSize="16">
                     <MenuItem Header="About"  Command="{Binding Help.HelpCommand}"  Foreground="DarkBlue" FontSize="14" FontWeight="SemiBold" >
                         <MenuItem.Icon>
                             <Image Source="./Res/about.png" />
@@ -81,6 +81,7 @@
                     </MenuItem>
                 </MenuItem>
 
+                <MenuItem Header="New Window" Foreground="DarkRed" FontSize="16" Click="MenuItemNewWindow_Click"></MenuItem>
 
             </Menu.Items>
         </Menu>
@@ -93,6 +94,7 @@
                      Background="{Binding Document.IsTextChanged.Background, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" 
                     
                        />
+            
 
             <TextBox DockPanel.Dock="Top"
                      VerticalScrollBarVisibility="Visible"
