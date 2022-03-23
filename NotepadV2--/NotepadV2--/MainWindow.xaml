@@ -72,7 +72,7 @@
                         </MenuItem.Icon>
                     </MenuItem>
                 </MenuItem>
-                <!--IsChecked ="{Binding Path=File.Document.TextChanged, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}-->
+               
                 <MenuItem Header="Help">
                     <MenuItem Header="About"  Command="{Binding Help.HelpCommand}"  Foreground="DarkBlue" FontSize="14" FontWeight="SemiBold" >
                         <MenuItem.Icon>
@@ -86,7 +86,7 @@
         </Menu>
 
         <DockPanel>
-            <TextBlock DockPanel.Dock="Bottom"
+            <TextBlock DockPanel.Dock="Top"
                        DataContext="{Binding File}"
                        Text="{Binding File.Document.FilePath}"
                        Name ="textBlockPath"

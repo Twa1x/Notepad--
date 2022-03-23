@@ -67,3 +67,4 @@ C:\Users\INTEL\Documents\GitHub\Notepad--\NotepadV2--\NotepadV2--\obj\Debug\Note
 C:\Users\INTEL\Documents\GitHub\Notepad--\NotepadV2--\NotepadV2--\obj\Debug\NotepadV2--.csproj.CoreCompileInputs.cache
 C:\Users\INTEL\Documents\GitHub\Notepad--\NotepadV2--\NotepadV2--\obj\Debug\NotepadV2--.exe
 C:\Users\INTEL\Documents\GitHub\Notepad--\NotepadV2--\NotepadV2--\obj\Debug\NotepadV2--.pdb
+C:\Users\INTEL\Documents\GitHub\Notepad--\NotepadV2--\NotepadV2--\obj\Debug\NotepadV2--.csproj.AssemblyReference.cache

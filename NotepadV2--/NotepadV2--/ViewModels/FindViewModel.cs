@@ -82,7 +82,7 @@ namespace NotepadV2__.ViewModels
                 if (Document.Text != null && Document.Text.Contains(wordToReplace))
                 {
                     Document.Text = Document.Text.Replace(wordToReplace, wordToBeReplacedWith);
-                    Document.TextChanged = true;
+                   
                 }
                 else
                 {
@@ -100,10 +100,9 @@ namespace NotepadV2__.ViewModels
                 wordToReplace = inputDialog.Answer;
                 string wordToBeReplacedWith = inputDialog.Answer2;
                 int index;
-                checked
-                {
+                             
                      index = Int32.Parse(inputDialog.Answer3);
-                }
+               
                 
                 
                 if (Document.Text != null && Document.Text.Contains(wordToReplace))
@@ -123,9 +122,9 @@ namespace NotepadV2__.ViewModels
                             }
                         }
                     }
-                    //tempString = String.Join(" ", tempStrings);
+                  
                     Document.Text= String.Join(" ", tempStrings);
-                    Document.TextChanged = true;
+                
                 }
                 else
                 {

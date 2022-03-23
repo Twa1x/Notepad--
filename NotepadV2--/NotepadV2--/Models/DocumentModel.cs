@@ -14,16 +14,11 @@ namespace NotepadV2__.Models
         private string _filePath;
         private string _fileName;
         private bool _isSaved;
-        private bool _textChanged;
+  
         private TextBlock _isTextChanged = new TextBlock();
       
 
-        public bool TextChanged
-        {
-            get { return _textChanged; }
-            set { OnPropertyChanged(ref _textChanged, value); } // trimitem ref de la _text 
-
-        }
+       
         public TextBlock IsTextChanged
         {
             get { return _isTextChanged; }
@@ -32,8 +27,8 @@ namespace NotepadV2__.Models
         }
         public string Text
         {
-            get { return _text; _textChanged = false; _isTextChanged.Background = Brushes.Red; }
-            set { OnPropertyChanged(ref _text, value); _textChanged = false; _isTextChanged.Background = Brushes.Red; } // trimitem ref de la _text 
+            get { return _text;  }
+            set { OnPropertyChanged(ref _text, value); _isTextChanged.Background = Brushes.DarkRed; } // trimitem ref de la _text 
 
         }
 

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NotepadV2__.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,11 +24,12 @@ namespace NotepadV2__
         public MainWindow()
         {
             InitializeComponent();
+          
         }
 
         private void textBox_TextChanged(object sender, TextChangedEventArgs e)
         {
-            textBlockPath.Background = Brushes.Red;
+            textBlockPath.Background = Brushes.DarkRed;
             
         }
     }

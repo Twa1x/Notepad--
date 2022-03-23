@@ -38,7 +38,7 @@ namespace NotepadV2__.ViewModels
             Document.FileName = string.Empty;
             Document.FilePath = string.Empty;
             Document.Text = string.Empty;
-            Document.TextChanged = false;
+            Document.IsTextChanged.Background = Brushes.DarkRed;
             Document.IsSaved = false;
         }
 
@@ -50,8 +50,8 @@ namespace NotepadV2__.ViewModels
             }
             else
                 SaveFileAs();
-                Document.TextChanged = true;
-            Document.IsTextChanged.Background = Brushes.Blue;
+                
+            Document.IsTextChanged.Background = Brushes.DarkGreen;
            
         }
             
@@ -65,8 +65,8 @@ namespace NotepadV2__.ViewModels
                 Document.FileName = saveFileDialog.SafeFileName;
                 Document.IsSaved = true;
                 File.WriteAllText(saveFileDialog.FileName, Document.Text);
-                Document.TextChanged = true;
-                Document.IsTextChanged.Background = Brushes.Blue;
+              
+                Document.IsTextChanged.Background = Brushes.DarkGreen;
              
             }
           
@@ -83,8 +83,8 @@ namespace NotepadV2__.ViewModels
                 Document.FilePath = openFileDialog.FileName;
                 Document.FileName = openFileDialog.SafeFileName;
                 Document.IsSaved = true;
-                Document.TextChanged = true;
-                Document.IsTextChanged.Background = Brushes.Blue;
+               
+                Document.IsTextChanged.Background = Brushes.DarkGreen;
                 Document.Text = File.ReadAllText(openFileDialog.FileName);
 
 
